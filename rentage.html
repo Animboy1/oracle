@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | Air</title>
+    <link rel="stylesheet" href="rentage.css">
+</head>
+<body>
+    <header class="signin-header">
+        <nav class="signin-navbar" aria-label="Sign in navigation">
+            <details class="support-menu">
+                <summary>Support <span aria-hidden="true">⌄</span></summary>
+                <div class="support-links">
+                    <a href="">Help and support</a>
+                    <a href="">Contact Us</a>
+                </div>
+            </details>
+
+            <a class="home-button" href="index.html" aria-label="Return to home">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 11.5 12 4l9 7.5v8.25a.75.75 0 0 1-.75.75h-5.5v-5.75h-5.5v5.75h-5.5a.75.75 0 0 1-.75-.75V11.5Z" />
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <main class="signin-main">
+        <form class="signin-card" action="#" method="post">
+            <p class="eyebrow">WELCOME</p>
+            <h2>Create a listing account </h2>
+            <p class="intro">Create an account to list your property</p>
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <div class="form-actions">
+                <button type="submit">Continue</button>
+                <button id="open-listing-signin" type="button">Sign in</button>
+            </div>
+        </form>
+
+        <section id="help" class="sr-only" aria-label="Help and support"></section>
+        <section id="contact" class="sr-only" aria-label="Contact Us"></section>
+    </main>
+
+    <dialog class="signin-dialog" id="listing-signin-dialog" aria-label="Sign in to your listing account">
+        <button class="dialog-close" type="button" aria-label="Close sign in">×</button>
+        <iframe src="listingsignin.html" title="Listing account sign in"></iframe>
+    </dialog>
+
+    <script>
+        const signInDialog = document.getElementById('listing-signin-dialog');
+
+        document.getElementById('open-listing-signin').addEventListener('click', function () {
+            signInDialog.showModal();
+        });
+
+        document.querySelector('.dialog-close').addEventListener('click', function () {
+            signInDialog.close();
+        });
+    </script>
+</body>
+</html>

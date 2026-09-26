@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="user.js" defer></script>
+    <link rel="stylesheet" href="user.css">
+    <script></script>
+</head>
+<body>
+      <header class="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a class="nav-icon" href="#all" aria-label="Air home">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 11.5 12 4l9 7.5v8.25a.75.75 0 0 1-.75.75h-5.5v-5.75h-5.5v5.75h-5.5a.75.75 0 0 1-.75-.75V11.5Z" />
+                </svg>
+            </a>
+
+            <div class="nav-links">
+                <a class="nav-link active" href="#all" aria-current="page">All</a>
+                <a class="nav-link" href="#homes">Homes</a>
+                <a class="nav-link" href="#rentage">Rentage</a>
+                <a class="nav-link" href="#services">Services</a>
+            </div>
+
+            <div class="nav-actions">
+                <a class="add-rental" href="rentage.html">Add a rental</a>
+                <div class="profile-menu">
+                    <button class="profile-trigger" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="account-menu">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z" />
+                        </svg>
+                    </button>
+                    <div class="account-menu" id="account-menu" role="menu" hidden>
+                        <a href="" role="menuitem">Account</a>
+                        <a href="bookings.html" role="menuitem">Bookings</a>
+                        <a href="rewards-wallet.html" role="menuitem">Reward and Wallet</a>
+                        <a href="reviews.html" role="menuitem">Reviews</a>
+                        <a href="saved.html" role="menuitem">Bookmarked</a>
+                        <a href="promo-codes.html" role="menuitem">Promo codes</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="all" aria-labelledby="all-heading">
+            <div class="hero-copy">
+                <h1 id="all-heading">Find the perfect place.<br>Stress-Free</h1>
+            </div>
+
+            <div class="image-cluster" aria-label="Featured homes">
+                 <img class="home-image image-one" src="caro4.jpg" alt="Featured rental home">
+                <img class="home-image image-two" src="caro1.jpg" alt="Featured rental home">
+                <img class="home-image image-three" src="caro3.jpg" alt="Featured rental home">
+                <img class="home-image image-four" src="apartment.jpg" alt="Featured rental home">
+            </div>
+              </section>
+<br> <br>
+        <form class="booking-panel" action="#homes" method="get">
+            <label class="booking-section location-section">
+                <svg class="booking-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s7-6.08 7-12a7 7 0 1 0-14 0c0 5.92 7 12 7 12Zm0-9.25A2.75 2.75 0 1 1 12 6.25a2.75 2.75 0 0 1 0 5.5Z" />
+                </svg>
+                <span class="field-content">
+                    <span class="field-label">Location</span>
+                    <select name="location" aria-label="Location">
+                        <option value="all">All locations</option>
+                        <option value="city-centre">City centre</option>
+                        <option value="beachfront">Beachfront</option>
+                    </select>
+      </span>
+            </label>
+
+            <div class="booking-section date-section">
+                <svg class="booking-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2v3M17 2v3M4.5 9h15M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19V6A1.5 1.5 0 0 1 5 4.5Z" />
+                </svg>
+                <div class="field-content">
+                    <span class="field-label">Check in - Check out</span>
+                    <div class="date-inputs">
+                        <input id="check-in" name="check-in" type="date" aria-label="Check-in date">
+                        <span aria-hidden="true">–</span>
+                        <input id="check-out" name="check-out" type="date" aria-label="Check-out date">
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-section guests-section">
+                <svg class="booking-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4.25 4.25 0 1 0 0-8.5 4.25 4.25 0 0 0 0 8.5Zm-8 8.5c0-4.05 3.58-6.5 8-6.5s8 2.45 8 6.5h-16Z" />
+                </svg>
+                <div class="field-content">
+                    <span class="field-label">Guests and rooms</span>
+                    <div class="counter-row">
+  <span>People</span>
+                        <div class="counter-control">
+                            <button type="button" class="counter-button" data-counter="people" data-change="-1" aria-label="Decrease people">−</button>
+                            <output id="people-count" aria-live="polite">1</output>
+                            <input type="hidden" name="people" value="1">
+                            <button type="button" class="counter-button" data-counter="people" data-change="1" aria-label="Increase people">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-row">
+                        <span>Rooms</span>
+                        <div class="counter-control">
+                            <button type="button" class="counter-button" data-counter="rooms" data-change="-1" aria-label="Decrease rooms">−</button>
+                            <output id="rooms-count" aria-live="polite">1</output>
+                            <input type="hidden" name="rooms" value="1">
+                            <button type="button" class="counter-button" data-counter="rooms" data-change="1" aria-label="Increase rooms">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     <button class="search-button" type="submit">Search</button>
+        </form>
+
+        <div class="browse-categories" aria-labelledby="browse-categories-heading">
+            <h3 id="browse-categories-heading">Browse by category</h3>
+            <div class="category-grid">
+                <div class="category-item">
+                    <a class="category-card" href="">
+                        <img src="hotel.jpg" alt="Hotel">
+                    </a>
+                    <a class="category-label" href="">Hotel</a>
+                </div>
+                <div class="category-item">
+                    <a class="category-card" href="">
+                        <img src="apartment.jpg" alt="Apartment">
+                    </a>
+                    <a class="category-label" href="">Apartment</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="property-carousel" aria-labelledby="property-carousel-heading">
+            <h2 id="property-carousel-heading">Available homes</h2>
+            <div class="property-carousel-shell">
+                <button class="carousel-arrow carousel-arrow-left" type="button" aria-label="Show previous homes">&#8592;</button>
+                <div class="property-carousel-viewport">
+                    <div class="property-carousel-track">
+                        <article class="property-card" data-property-id="property-1">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro1.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>4 bed apartment</h3><h4>Starting from</h4><h3>NGN 500,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-2">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro4.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-3">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="hotel.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>4 bed apartment</h3><h4>Starting from</h4><h3>NGN 600,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-4">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro2.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-5">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro5.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-6">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="apartment.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3> Apartment</h3><h4>Starting from</h4><h3>NGN 1,000,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-7">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro2.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-8">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro2.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-9">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro2.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                        <article class="property-card" data-property-id="property-10">
+                            <a class="property-card-link" href="https://www.airbnb.com/" aria-label="View 3 bed apartment"></a>
+                            <button class="save-property" type="button" aria-label="Save 3 bed apartment"><span aria-hidden="true">♡</span></button>
+                            <img src="caro2.jpg" alt="3 bed apartment">
+                            <div class="property-details"><h4>house</h4><h3>3 bed apartment</h3><h4>Starting from</h4><h3>NGN 300,000</h3></div>
+                        </article>
+                    </div>
+                </div>
+                <button class="carousel-arrow carousel-arrow-right" type="button" aria-label="Show next homes">&#8594;</button>
+            </div>
+        </section>
+
+        <section id="homes" aria-label="Homes"></section>
+        <section id="rentage" aria-label="Rentage"></section>
+        <section id="services" aria-label="Services"></section>
+
+         <section class="apartment-explorer" aria-labelledby="apartment-explorer-heading">
+            <h2 id="apartment-explorer-heading">Explore Homes & Apartments</h2>
+            <div class="city-grid">
+                <a class="city-card" href="abuja.html">
+                    <img src="Abuja.jpg" alt="Abuja">
+                    <span>Abuja</span>
+                </a>
+                <a class="city-card" href="ibadan.html">
+                    <img src="ibadan.jpg" alt="Ibadan">
+                    <span>Ibadan</span>
+                </a>
+                <a class="city-card" href=".html">
+                    <img src="enugu.jpg" alt="Enugu">
+                    <span>Enugu</span>
+                </a>
+                <a class="city-card" href="lagos.html">
+                    <img src="Lagos.jpg" alt="Lagos">
+                    <span>Lagos</span>
+                </a>
+                <a class="city-card" href="port-harcourt.html">
+                    <img src="PH.jpg" alt="Port Harcourt">
+                    <span>Port Harcourt</span>
+                </a>
+                <a class="city-card" href="benin.html">
+                    <img src="city-sunset.jpg" alt="Benin">
+                    <span>Benin</span>
+                </a>
+            </div>
+        </section>
+
+           <section class="why-choose-us" aria-labelledby="why-choose-us-heading">
+            <div class="why-choose-copy">
+                <h3 class="why-choose-eyebrow">Why choose us</h3>
+                <h2 id="why-choose-us-heading">Where comfort meets convenience</h2>
+                <h3 class="why-choose-description">Finding the right place shouldn't be complicated. We make it simple to find, book and enjoy your next stay — with trusted landlords, secure payments and excellent support.</h3>
+
+                <div class="feature-list">
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7.5h14v11H5zM8 7.5V6a4 4 0 0 1 8 0v1.5M5 12h14M10 12v2h4v-2" /></svg>
+                        <div>
+                            <h3>secure payments</h3>
+                            <p>pay safely, everytime</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10.5H14v-6H10v6H3z" /></svg>
+                        <div>
+                            <h3>verified listing</h3>
+                            <p>real properties, real people</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5a4 4 0 0 1-4 4H9l-5 2 1.5-4A7.5 7.5 0 1 1 20 15.5ZM8 12h.01M12 12h.01M16 12h.01" /></svg>
+                        <div>
+                            <h3>support</h3>
+                            <p>24/7 contact support</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5v8.25a.75.75 0 0 1-.75.75h-5.5v-5.75h-5.5v5.75h-5.5a.75.75 0 0 1-.75-.75zM8 12h.01M16 12h.01" /></svg>
+                        <div>
+                            <h3>flexible options</h3>
+                            <p>shortlet & long stays</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-choose-image">
+                <img src="Lagos.jpg" alt="Comfortable rental home">
+            </div>
+        </section>
+
+        <section class="stay-carousel" aria-labelledby="stay-carousel-heading">
+            <div class="carousel-slides" aria-hidden="true">
+                <img class="carousel-slide is-active" src="caro1.jpg" alt="">
+                <img class="carousel-slide" src="caro2.jpg" alt="">
+                <img class="carousel-slide" src="caro3.jpg" alt="">
+                <img class="carousel-slide" src="caro3.jpg" alt="">
+                <img class="carousel-slide" src="caro4.jpg" alt="">
+                <img class="carousel-slide" src="caro5.jpg" alt="">
+            </div>
+            <div class="stay-carousel-content">
+                <h2 id="stay-carousel-heading">Your perfect stay is just a click away</h2>
+                <h3>Search, book and move in — it’s that easy</h3>
+                <a class="browse-apartments-button" href="#homes">Browse Apartments</a>
+            </div>
+        </section>
+
+       
+
+        <div class="recommendations" aria-labelledby="recommendations-heading">
+            <h2 id="recommendations-heading">Recommendations</h2>
+            <div class="recommendation-links">
+                <a href="ibadan-hotels.html">Ibadan hotels</a>
+                <a href="lekki-hotels.html">Lekki hotels</a>
+                <a href="port-harcourt-hotels.html">Port harcourt hotels</a>
+                <a href="enugu-hotels.html">Enugu hotel</a>
+                <a href="ikeja-hotels.html">Ikeja hotels</a>
+                <a href="maitama-hotels.html">Maitama hotels</a>
+                <a href="user.html">Guzape hotels</a>
+                <a href="wuse-ii-hotels.html">Wuse II hotels</a>
+                <a href="woji-hotels.html">Woji hotel</a>
+                <a href="old-gra-hotels.html">Old GRA hotel</a>
+            </div>
+        </div>
+    </main>
+
+     <footer class="footer">
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Manage your bookings</a></li>
+        <li><a href="#">Contact Customer Service</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-column">
+      <h3>Discover</h3>
+      <ul>
+        <li><a href="#">New apartments in your city</a></li>
+        <li><a href="#">List Property</a></li>
+        <li><a href="#">Reservations</a></li>
+        <li><a href="#">Promo deals</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Terms and settings</h3>
+      <ul>
+        <li><a href="#">Privacy Notice</a></li>
+        <li><a href="#">Terms of service</a></li>
+        <li><a href="#">Partner dispute</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">About Green</a></li>
+        <li><a href="#">How we work</a></li>
+        <li><a href="#">Content guidelines</a></li>
+      </ul>
+    </div>
+  </footer>
+  
+
+
+</body>
+</html>

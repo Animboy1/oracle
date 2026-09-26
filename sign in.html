@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | Air</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="signin-header">
+        <nav class="signin-navbar" aria-label="Sign in navigation">
+            <details class="support-menu">
+                <summary>Support <span aria-hidden="true">⌄</span></summary>
+                <div class="support-links">
+                    <a href="#help">Help and support</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </details>
+
+            <a class="home-button" href="index.html" aria-label="Return to home">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 11.5 12 4l9 7.5v8.25a.75.75 0 0 1-.75.75h-5.5v-5.75h-5.5v5.75h-5.5a.75.75 0 0 1-.75-.75V11.5Z" />
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <main class="signin-main">
+        <form class="signin-card" action="#" method="post">
+            <p class="eyebrow">WELCOME</p>
+            <h2>Sign into your account </h2>
+            <p class="intro">Enter your details to continue finding your perfect place.</p>
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <button type="submit">Sign in</button>
+        </form>
+
+        <section id="help" class="sr-only" aria-label="Help and support"></section>
+        <section id="contact" class="sr-only" aria-label="Contact Us"></section>
+    </main>
+</body>
+</html>
